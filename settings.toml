@@ -2,4 +2,4 @@
 debug = true
 
 [default.db]
-url = "postgresql+asyncpg://postgres:postgres@localhost:5432/postgres"
+url = "postgresql+asyncpg://postgres:postgres@postgres:5432/bookkeeper"
