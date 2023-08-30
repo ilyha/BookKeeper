@@ -1,13 +1,18 @@
-from typing import Annotated, Any
+from typing import Annotated
 
 from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlmodel import select
 from sqlmodel.ext.asyncio.session import AsyncSession
 from starlette import status
 
-from book_keeper.authors.models import Author
-from book_keeper.books.models import Book, BookCreate, BookReadWithAuthor, BookUpdate
-from book_keeper.db import get_session
+from src.book_keeper.authors.models import Author
+from src.book_keeper.books.models import (
+    Book,
+    BookCreate,
+    BookReadWithAuthor,
+    BookUpdate,
+)
+from src.book_keeper.db import get_session
 
 books_router = APIRouter(prefix="/books", tags=["Books"])
 

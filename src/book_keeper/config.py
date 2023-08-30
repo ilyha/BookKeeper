@@ -2,7 +2,7 @@ from pathlib import Path
 
 from dynaconf import Dynaconf
 
-root_path = Path(__file__).parent.parent
+root_path = Path(__file__).parent.parent.parent
 
 settings = Dynaconf(
     environments=True,

@@ -2,7 +2,7 @@ from datetime import date
 
 from sqlmodel import Field, SQLModel
 
-from book_keeper.authors.models import Author
+from src.book_keeper.authors.models import Author
 
 
 class BookBase(SQLModel):

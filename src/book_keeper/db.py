@@ -5,7 +5,7 @@ from sqlalchemy.orm import sessionmaker
 from sqlmodel import SQLModel, create_engine
 from sqlmodel.ext.asyncio.session import AsyncSession
 
-from book_keeper.config import settings
+from src.book_keeper.config import settings
 
 engine = AsyncEngine(create_engine(settings.db.url, echo=settings.debug))
 
