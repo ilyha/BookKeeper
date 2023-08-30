@@ -1,0 +1,5 @@
+[default]
+debug = true
+
+[default.db]
+url = "postgresql+asyncpg://postgres:postgres@localhost:5432/postgres"

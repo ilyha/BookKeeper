@@ -1,0 +1,73 @@
+[tool.poetry]
+name = "book_keeper"
+version = "0.1.0"
+description = ""
+authors = ["Ilya Flakin <ilyhich@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.103.0"
+uvicorn = "^0.23.2"
+asyncpg = "^0.28.0"
+sqlmodel = "^0.0.8"
+dynaconf = "^3.2.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.poetry.group.dev.dependencies]
+#asgi-lifespan = "^2.0.0"
+#pytest-httpx = ">=0.21.1,^0"
+#ziphy-pychecks = { git = "git@github.com:ziphycare/ziphy-pychecks.git", rev = "v2.0.1" }
+#types-python-jose = "^3.3.4.8"
+#types-pytz = "^2023.3.0.0"
+#types-python-dateutil = "^2.8.19.14"
+ruff = "^0.0.286"
+black = "^23.7.0"
+mypy = "^1.5.1"
+
+
+[tool.poetry.scripts]
+init_db = "book_keeper:init"
+
+
+[tool.pytest.ini_options]
+default_async_timeout = 60
+
+[tool.mypy]
+strict = true
+plugins = "pydantic.mypy"
+explicit_package_bases = true
+
+[tool.black]
+preview = true
+target-versions = ["py311"]
+
+[tool.ruff]
+target-version = "py311"
+select = [
+    "E", "F", "I", "W", "N", "UP",
+    "ANN204", "FBT", "B", "C4", "G",
+    "PT", "PIE", "RSE", "RET", "SLF",
+    "SIM", "TID", "PTH", "ERA",
+    "PGH", "PLE", "PLR", "PLW", "TRY",
+    "PERF", "RUF001", "PT004",
+]
+ignore = [
+    "N805", "SIM102", "SIM117", "PLR0911",
+    "PLR0912", "PLR0913", "PLR0915", "PLR2004",
+    "TRY003", "FBT002", "PT004"
+]
+unfixable = ["ERA001"]
+
+[tool.ruff.flake8-pytest-style]
+fixture-parentheses = false
+mark-parentheses = false
+
+[[tool.mypy.overrides]]
+module = ["dynaconf.*"]
+ignore_missing_imports = true
