@@ -23,14 +23,13 @@ build-backend = "poetry.core.masonry.api"
 ruff = "^0.0.286"
 black = "^23.7.0"
 mypy = "^1.5.1"
+pytest-httpx = "^0.23.1"
+httpx = "^0.24.1"
 
 
 [tool.poetry.scripts]
 init_db = "src.book_keeper:init"
 
-
-[tool.pytest.ini_options]
-default_async_timeout = 60
 
 [tool.mypy]
 strict = true
