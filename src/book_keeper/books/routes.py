@@ -65,7 +65,7 @@ async def read_book(
     return db_book
 
 
-@books_router.patch("/{book_id}", response_model=BookReadWithAuthor)
+@books_router.patch("/{book_id}", response_model=Book)
 async def update_book(
     *,
     session: Annotated[AsyncSession, Depends(get_session)],

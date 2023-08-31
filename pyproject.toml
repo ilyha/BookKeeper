@@ -1,9 +1,10 @@
 [tool.poetry]
 name = "book-keeper"
-version = "0.1.0"
+version = "0.1.1"
 description = ""
 authors = ["Ilya Flakin <ilyhich@gmail.com>"]
 readme = "README.md"
+packages = [{ include = "src" }]
 
 [tool.poetry.dependencies]
 python = "^3.11"
@@ -25,6 +26,9 @@ black = "^23.7.0"
 mypy = "^1.5.1"
 pytest-httpx = "^0.23.1"
 httpx = "^0.24.1"
+pytest = "^7.4.0"
+asgi-lifespan = "^2.1.0"
+alt-pytest-asyncio = "^0.7.1"
 
 
 [tool.poetry.scripts]
@@ -60,6 +64,9 @@ unfixable = ["ERA001"]
 [tool.ruff.flake8-pytest-style]
 fixture-parentheses = false
 mark-parentheses = false
+
+[tool.pytest.ini_options]
+default_async_timeout = 60
 
 [[tool.mypy.overrides]]
 module = ["dynaconf.*"]
